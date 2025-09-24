@@ -76,13 +76,13 @@
 │  │ProductService   │    └─────────────────┘                                     │
 │  │                │                                                             │
 │  │ • getProductList()│   ┌─────────────────┐                                    │
-│  │ • addProduct() │    │ SchoolService    │                                     │
-│  │ • updateProduct()│  │                │                                       │
-│  │ • deleteProduct()│  │ • getSchoolList()│                                     │
-│  └─────────────────┘    │ • getSchoolById()│                                    │
-│                         │ • addSchool()   │                                     │
-│                         │ • updateSchool()│                                     │
-│                         └─────────────────┘                                     │
+│  │ • addProduct() │      │ SchoolService   │                                    │
+│  │ • updateProduct()│    │                 │                                    │
+│  │ • deleteProduct()│    │ • getSchoolList()│                                   │
+│  └─────────────────┘     │ • getSchoolById()│                                   │
+│                          │ • addSchool()   │                                    │
+│                          │ • updateSchool()│                                    │
+│                          └─────────────────┘                                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
