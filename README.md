@@ -24,10 +24,10 @@
 │  │ • register.jsp │    │ • adminTask.jsp │    │ • JavaScript    │               │
 │  │ • userIndex.jsp│    │ • adminSchool.jsp│   │ • 图片资源      │               │
 │  │ • userInfo.jsp │    │ • adminProduct.jsp│  │ • 字体文件      │               │
-│  │ • userNewtask.jsp│  │                │     │                 │               │
-│  │ • userPtask.jsp│    │                │     │                 │               │
-│  │ • userAtask.jsp│    │                │     │                 │               │
-│  │ • taskInfo.jsp │    │                │     │                 │               │
+│  │ • userNewtask.jsp│  │                 │    │                 │               │
+│  │ • userPtask.jsp│    │                 │    │                 │               │
+│  │ • userAtask.jsp│    │                 │    │                 │               │
+│  │ • taskInfo.jsp │    │                 │    │                 │               │
 │  └─────────────────┘   └─────────────────┘    └─────────────────┘               │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
