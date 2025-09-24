@@ -27,7 +27,7 @@
 │  │ • userNewtask.jsp│  │                │     │                │               │
 │  │ • userPtask.jsp│    │                │     │                │               │
 │  │ • userAtask.jsp│    │                │     │                │               │
-│  │ • taskInfo.jsp │    │                │      │                │              │
+│  │ • taskInfo.jsp │    │                │     │                │               │
 │  └─────────────────┘   └─────────────────┘    └─────────────────┘              │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
@@ -50,10 +50,10 @@
 │  │ProductController│                                                          │
 │  │                │    ┌─────────────────┐                                    │
 │  │ • getProductList()│ │CommonController │                                    │
-│  │ • addProduct() │    │                │                                    │
-│  │ • updateProduct()│  │ • index()      │                                    │
-│  │ • deleteProduct()│  │ • login()      │                                    │
-│  └─────────────────┘   │ • register()   │                                    │
+│  │ • addProduct() │    │                 │                                    │
+│  │ • updateProduct()│  │ • index()       │                                    │
+│  │ • deleteProduct()│  │ • login()       │                                    │
+│  └─────────────────┘   │ • register()    │                                    │
 │                        └─────────────────┘                                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
