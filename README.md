@@ -259,28 +259,32 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                │
 │  ┌─────────────────┐                                                           │
-│  │     user表      │                                                           │
-│  │                │                                                           │
-│  │ • stuid (PK)   │                                                           │
-│  │ • studentid    │                                                           │
-│  │ • password     │                                                           │
-│  │ • schoolid (FK)│────────────────────────────────────┐                      │
-│  │ • sex          │                                    │                      │
-│  │ • name         │                                    │                      │
-│  │ • registertime │                                    │                      │
-│  │ • money        │                                    │                      │
-│  │ • state        │                                    │                      │
-│  └─────────────────┘                                    │                      │
-│                                                         │                      │
-│  ┌─────────────────┐                                    │                      │
-│  │    school表     │◄───────────────────────────────────┘                      │
+│  │    school表     │                                                           │
 │  │                │                                                           │
 │  │ • schoolid (PK)│                                                           │
 │  │ • name         │                                                           │
 │  │ • addtime      │                                                           │
 │  │ • state        │                                                           │
 │  └─────────────────┘                                                           │
-│                                                                                │
+│         │                                                                      │
+│         │ 1:N                                                                  │
+│         ▼                                                                      │
+│  ┌─────────────────┐                                                           │
+│  │     user表      │                                                           │
+│  │                │                                                           │
+│  │ • stuid (PK)   │                                                           │
+│  │ • studentid    │                                                           │
+│  │ • password     │                                                           │
+│  │ • schoolid (FK)│                                                           │
+│  │ • sex          │                                                           │
+│  │ • name         │                                                           │
+│  │ • registertime │                                                           │
+│  │ • money        │                                                           │
+│  │ • state        │                                                           │
+│  └─────────────────┘                                                           │
+│         │                                                                      │
+│         │ 1:N                                                                  │
+│         ▼                                                                      │
 │  ┌─────────────────┐                                                           │
 │  │     task表      │                                                           │
 │  │                │                                                           │
@@ -289,45 +293,48 @@
 │  │ • title        │                                                           │
 │  │ • content      │                                                           │
 │  │ • price        │                                                           │
-│  │ • publish_user_id (FK) │────────────────────────────────────┐              │
-│  │ • accept_user_id       │                                    │              │
-│  │ • schoolid (FK)        │────────────────────────────────────┼──────────────┘
-│  │ • state                │                                    │              │
-│  │ • addtime              │                                    │              │
-│  │ • finishtime           │                                    │              │
-│  └─────────────────────────┘                                    │              │
-│                                                                 │              │
-│  ┌─────────────────┐                                            │              │
-│  │    admin表      │                                            │              │
-│  │                │                                            │              │
-│  │ • aid (PK)     │                                            │              │
-│  │ • account      │                                            │              │
-│  │ • password     │                                            │              │
-│  │ • name         │                                            │              │
-│  │ • addtime      │                                            │              │
-│  │ • state        │                                            │              │
-│  └─────────────────┘                                            │              │
-│                                                                 │              │
-│  ┌─────────────────┐                                            │              │
-│  │   product表     │                                            │              │
-│  │                │                                            │              │
-│  │ • id (PK)      │                                            │              │
-│  │ • name         │                                            │              │
-│  │ • icon         │                                            │              │
-│  │ • price        │                                            │              │
-│  └─────────────────┘                                            │              │
-│                                                                 │              │
-│  关系说明：                                                     │              │
-│  • user.schoolid → school.schoolid (多对一)                    │              │
-│  • task.publish_user_id → user.stuid (多对一)                  │              │
-│  • task.accept_user_id → user.stuid (多对一)                   │              │
-│  • task.schoolid → school.schoolid (多对一)                    │              │
-│                                                                 │              │
+│  │ • publish_user_id (FK) │                                                   │
+│  │ • accept_user_id (FK)  │                                                   │
+│  │ • schoolid (FK)        │                                                   │
+│  │ • state                │                                                   │
+│  │ • addtime              │                                                   │
+│  │ • finishtime           │                                                   │
+│  └─────────────────────────┘                                                   │
+│                                                                                │
+│  ┌─────────────────┐    ┌─────────────────┐                                    │
+│  │    admin表      │    │   product表     │                                    │
+│  │                │    │                │                                    │
+│  │ • aid (PK)     │    │ • id (PK)      │                                    │
+│  │ • account      │    │ • name         │                                    │
+│  │ • password     │    │ • icon         │                                    │
+│  │ • name         │    │ • price        │                                    │
+│  │ • addtime      │    │                │                                    │
+│  │ • state        │    │                │                                    │
+│  └─────────────────┘    └─────────────────┘                                    │
+│                                                                                │
+│  关系说明：                                                                     │
+│  • school (1) ←→ (N) user: 一个学校可以有多个用户                              │
+│  • user (1) ←→ (N) task: 一个用户可以发布多个任务                              │
+│  • user (1) ←→ (N) task: 一个用户可以接受多个任务                              │
+│  • school (1) ←→ (N) task: 一个学校可以有多个任务                              │
+│  • admin表: 独立的管理员表，无外键关系                                          │
+│  • product表: 独立的产品表，无外键关系                                          │
+│                                                                                │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              表结构详情                                         │
 ├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                │
+│  school表 (学校表)                                                              │
+│  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
+│  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
+│  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
+│  │ schoolid    │ int(6)      │ PK, AI     │ 学校ID，主键，自增                  │
+│  │ name        │ varchar(255)│ NOT NULL   │ 学校名称                             │
+│  │ addtime     │ datetime    │ NOT NULL   │ 添加时间                             │
+│  │ state       │ int(2)      │ DEFAULT 0  │ 状态，0-正常，1-禁用                 │
+│  └─────────────┴─────────────┴─────────────┴─────────────────────────────────────┘
 │                                                                                │
 │  user表 (用户表)                                                                │
 │  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
@@ -336,7 +343,7 @@
 │  │ stuid       │ int(11)     │ PK, AI     │ 用户ID，主键，自增                  │
 │  │ studentid   │ varchar(20) │ NOT NULL   │ 学号，唯一标识                       │
 │  │ password    │ varchar(255)│ NOT NULL   │ 密码，加密存储                       │
-│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键                         │
+│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键→school.schoolid        │
 │  │ sex         │ int(2)      │ DEFAULT 0  │ 性别，0-未知，1-男，2-女             │
 │  │ name        │ varchar(255)│ NOT NULL   │ 姓名                                 │
 │  │ registertime│ datetime(6) │ NOT NULL   │ 注册时间                             │
@@ -353,9 +360,9 @@
 │  │ title       │ varchar(255)│ NOT NULL   │ 任务标题                             │
 │  │ content     │ text        │ NOT NULL   │ 任务内容描述                         │
 │  │ price       │ double(30,0)│ NOT NULL   │ 任务奖励金额                         │
-│  │ publish_user_id│ varchar(255)│ NOT NULL│ 发布用户学号，外键                   │
-│  │ accept_user_id│ int(11)   │ DEFAULT 0  │ 接受用户ID，外键                     │
-│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键                         │
+│  │ publish_user_id│ varchar(255)│ NOT NULL│ 发布用户学号，外键→user.studentid    │
+│  │ accept_user_id│ int(11)   │ DEFAULT 0  │ 接受用户ID，外键→user.stuid          │
+│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键→school.schoolid        │
 │  │ state       │ int(2)      │ DEFAULT 0  │ 任务状态，0-待接受，1-进行中，2-已完成，3-已关闭│
 │  │ addtime     │ datetime(6) │ NOT NULL   │ 发布时间                             │
 │  │ finishtime  │ datetime    │ NULL       │ 完成时间                             │
@@ -369,16 +376,6 @@
 │  │ account     │ varchar(255)│ NOT NULL   │ 管理员账号                           │
 │  │ password    │ varchar(255)│ NOT NULL   │ 密码，加密存储                       │
 │  │ name        │ varchar(255)│ NOT NULL   │ 管理员姓名                           │
-│  │ addtime     │ datetime    │ NOT NULL   │ 添加时间                             │
-│  │ state       │ int(2)      │ DEFAULT 0  │ 状态，0-正常，1-禁用                 │
-│  └─────────────┴─────────────┴─────────────┴─────────────────────────────────────┘
-│                                                                                │
-│  school表 (学校表)                                                              │
-│  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
-│  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
-│  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
-│  │ schoolid    │ int(6)      │ PK, AI     │ 学校ID，主键，自增                  │
-│  │ name        │ varchar(255)│ NOT NULL   │ 学校名称                             │
 │  │ addtime     │ datetime    │ NOT NULL   │ 添加时间                             │
 │  │ state       │ int(2)      │ DEFAULT 0  │ 状态，0-正常，1-禁用                 │
 │  └─────────────┴─────────────┴─────────────┴─────────────────────────────────────┘
