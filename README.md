@@ -37,20 +37,20 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐              │
 │  │ UserController  │    │ TaskController  │    │ AdminController │              │
-│  │                │     │                 │    │                │               │
-│  │ • login()      │     │ • findtask()    │    │ • login()      │               │
-│  │ • register()   │     │ • newtask()     │    │ • update()     │               │
-│  │ • update()     │     │ • mytask()      │    │ • addAdmin()   │               │
-│  │ • updatePassword()│  │ • atask()       │    │ • getUserList()│               │
-│  │ • getUserInfo()│     │ • finishtask()  │    │ • getTaskList()│               │
-│  │ • addMoney()   │     │ • closetask()   │    │ • getSchoolList()│             │
+│  │                 │    │                 │    │                 │              │
+│  │ • login()       │    │ • findtask()    │    │ • login()       │              │
+│  │ • register()    │    │ • newtask()     │    │ • update()      │              │
+│  │ • update()      │    │ • mytask()      │    │ • addAdmin()    │              │
+│  │ • updatePassword()│  │ • atask()       │    │ • getUserList() │              │
+│  │ • getUserInfo() │    │ • finishtask()  │    │ • getTaskList() │              │
+│  │ • addMoney()    │    │ • closetask()   │    │ • getSchoolList()│             │
 │  └─────────────────┘    │ • taskinfo()    │    │ • addUserMoney()│              │
 │                         │ • searchtask()  │    │ • updateUserState()│           │
 │  ┌─────────────────┐    └─────────────────┘    └─────────────────┘              │
 │  │ProductController│                                                            │
-│  │                │    ┌─────────────────┐                                      │
+│  │                 │   ┌─────────────────┐                                      │
 │  │ • getProductList()│ │CommonController │                                      │
-│  │ • addProduct() │    │                 │                                      │
+│  │ • addProduct()  │   │                 │                                      │
 │  │ • updateProduct()│  │ • index()       │                                      │
 │  │ • deleteProduct()│  │ • login()       │                                      │
 │  └─────────────────┘   │ • register()    │                                      │
@@ -63,16 +63,16 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐         ┌─────────────────┐         │
 │  │ UserService     │    │ TaskService     │         │ AdminService    │         │
-│  │                │     │                │          │                │          │
-│  │ • login()      │     │ • getTaskByKeysNoState()  │ • login()      │          │
-│  │ • register()   │     │ • getTaskByKeys()│        │ • updateAdmin() │         │
-│  │ • updateUser() │     │ • getTaskByPublishUserId()│ • addAdmin() │            │
-│  │ • getUserById()│     │ • getTaskByAcceptUserId() │ • getAdminById()│         │
-│  │ • addUserMoney()│    │ • addTask()     │         │                │          │
-│  │ • updateUserState()│ │ • updateTask() │          │                │          │
-│  └─────────────────┘    │ • deleteTask() │          │                │          │
-│                         │ • acceptTask() │          │                │          │
-│  ┌─────────────────┐    │ • finishTask() │          └─────────────────┘         │
+│  │                 │    │                 │         │                 │         │
+│  │ • login()       │    │ • getTaskByKeysNoState()  │ • login()       │         │
+│  │ • register()    │    │ • getTaskByKeys()│        │ • updateAdmin() │         │
+│  │ • updateUser()  │    │ • getTaskByPublishUserId()│ • addAdmin()    │         │
+│  │ • getUserById() │    │ • getTaskByAcceptUserId() │ • getAdminById()│         │
+│  │ • addUserMoney()│    │ • addTask()     │         │                 │         │
+│  │ • updateUserState()│ │ • updateTask()  │         │                 │         │
+│  └─────────────────┘    │ • deleteTask()  │         │                 │         │
+│                         │ • acceptTask()  │         │                 │         │
+│  ┌─────────────────┐    │ • finishTask()  │         └─────────────────┘         │
 │  │ProductService   │    └─────────────────┘                                     │
 │  │                 │                                                            │
 │  │ • getProductList()│   ┌─────────────────┐                                    │
@@ -91,11 +91,11 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
 │  │ UserMapper      │    │ TaskMapper      │    │ AdminMapper     │             │
-│  │                 │    │                 │    │                │             │
-│  │ • 用户CRUD操作  │    │ • 任务CRUD操作  │    │ • 管理员CRUD操作│             │
-│  │ • 登录验证      │    │ • 任务列表查询  │    │ • 登录验证      │             │
-│  │ • 信息查询      │    │ • 状态查询      │    │ • 权限管理      │             │
-│  │ • 状态更新      │    │ • 关联查询      │    │ • 用户管理      │             │
+│  │                 │    │                 │    │                 │             │
+│  │ • 用户CRUD操作  │    │ • 任务CRUD操作  │    │ • 管理员CRUD操作 │             │
+│  │ • 登录验证      │    │ • 任务列表查询  │    │ • 登录验证       │             │
+│  │ • 信息查询      │    │ • 状态查询      │    │ • 权限管理       │             │
+│  │ • 状态更新      │    │ • 关联查询      │    │ • 用户管理       │             │
 │  └─────────────────┘    └─────────────────┘    └─────────────────┘             │
 │                                                                                │
 │  ┌─────────────────┐    ┌─────────────────┐                                    │
@@ -113,25 +113,25 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
 │  │      User       │    │      Task       │    │      Admin      │             │
-│  │                │     │                 │    │                 │             │
-│  │ • stuid        │     │ • taskid        │    │ • aid           │             │
-│  │ • studentid    │     │ • publishUserId │    │ • account       │             │
-│  │ • password     │     │ • publishUserName│   │ • password      │             │
-│  │ • schoolid     │     │ • publishSchoolId│   │ • name          │             │
-│  │ • sex          │     │ • acceptUserId  │    │ • addtime       │             │
-│  │ • name         │     │ • reward        │    │ • state         │             │
-│  │ • registertime │     │ • addtime       │    │                 │             │
-│  │ • money        │     │ • endtime       │    │                 │             │
-│  │ • state        │     │ • taskname      │    │                 │             │
+│  │                 │    │                 │    │                 │             │
+│  │ • stuid         │    │ • taskid        │    │ • aid           │             │
+│  │ • studentid     │    │ • publishUserId │    │ • account       │             │
+│  │ • password      │    │ • publishUserName│   │ • password      │             │
+│  │ • schoolid      │    │ • publishSchoolId│   │ • name          │             │
+│  │ • sex           │    │ • acceptUserId  │    │ • addtime       │             │
+│  │ • name          │    │ • reward        │    │ • state         │             │
+│  │ • registertime  │    │ • addtime       │    │                 │             │
+│  │ • money         │    │ • endtime       │    │                 │             │
+│  │ • state         │    │ • taskname      │    │                 │             │
 │  └─────────────────┘    │ • taskcontext   │    └─────────────────┘             │
 │                         │ • state         │                                    │
 │  ┌─────────────────┐    └─────────────────┘    ┌─────────────────┐             │
 │  │    Product      │                           │     School      │             │
-│  │                │                            │                 │             │
-│  │ • id           │                            │ • schoolid      │             │
-│  │ • name         │                            │ • name          │             │
-│  │ • icon         │                            │ • addtime       │             │
-│  │ • price        │                            │ • state         │             │
+│  │                 │                           │                 │             │
+│  │ • id            │                           │ • schoolid      │             │
+│  │ • name          │                           │ • name          │             │
+│  │ • icon          │                           │ • addtime       │             │
+│  │ • price         │                           │ • state         │             │
 │  └─────────────────┘                           └─────────────────┘             │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
@@ -205,10 +205,10 @@
        │                   │                   │                   │
        │                   │                   │                   │
        ▼                   ▼                   ▼                   ▼
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   用户操作   │    │  请求处理   │    │  业务逻辑    │   │  数据操作    │
-│ • 登录      │    │ • 参数验证   │    │ • 数据处理  │    │ • SQL执行   │
-│ • 注册      │    │ • 权限检查   │    │ • 事务管理  │    │ • 结果返回   │
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌──────────────┐
+│   用户操作   │   │  请求处理    │    │  业务逻辑    │   │  数据操作    │
+│ • 登录       │   │ • 参数验证   │    │ • 数据处理  │    │ • SQL执行    │
+│ • 注册       │   │ • 权限检查   │    │ • 事务管理  │    │ • 结果返回   │
 │ • 发布任务   │   │ • 路由分发   │    │ • 业务规则  │    │ • 异常处理   │
 │ • 接受任务   │   │ • 响应处理   │    │ • 状态管理  │    │ • 连接管理   │
 │ • 管理任务   │   │ • 视图渲染   │    │ • 数据转换  │    │ • 缓存处理   │
@@ -231,28 +231,28 @@
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              数据流向说明                                       │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│ 1. 用户通过JSP页面发起请求                                                        │
-│ 2. Spring MVC DispatcherServlet接收请求并路由到对应Controller                   │
+│ 1. 用户通过JSP页面发起请求                                                       │
+│ 2. Spring MVC DispatcherServlet接收请求并路由到对应Controller                    │
 │ 3. Controller调用Service层处理业务逻辑                                           │
 │ 4. Service层调用Mapper层执行数据库操作                                           │
 │ 5. MyBatis执行SQL语句并返回结果                                                  │
 │ 6. 结果逐层返回，最终渲染到JSP页面展示给用户                                     │
-│                                                                                │
+│                                                                                 │
 │ 关键数据流：                                                                    │
 │ • 用户登录：User → UserController → UserService → UserMapper → user表           │
 │ • 任务发布：Task → TaskController → TaskService → TaskMapper → task表           │
 │ • 任务接受：Task → TaskController → TaskService → TaskMapper → task表           │
 │ • 管理员操作：Admin → AdminController → AdminService → AdminMapper → admin表    │
-│ • 学校管理：School → AdminController → SchoolService → SchoolMapper → school表 │
+│ • 学校管理：School → AdminController → SchoolService → SchoolMapper → school表  │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ## 数据库关系图
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────┐
+┌──────────────────────────────────────────────────────────────────────────────────┐
 │                            Campus Help System 数据库关系图                       │
-└─────────────────────────────────────────────────────────────────────────────────┘
+└──────────────────────────────────────────────────────────────────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────────────────────┐
 │                                数据库表关系                                   │
@@ -260,59 +260,59 @@
 │                                                                               │
 │  ┌─────────────────┐                                                          │
 │  │    school表     │                                                          │
-│  │                │                                                           │
-│  │ • schoolid (PK)│                                                           │
-│  │ • name         │                                                           │
-│  │ • addtime      │                                                           │
-│  │ • state        │                                                           │
+│  │                 │                                                          │
+│  │ • schoolid (PK) │                                                          │
+│  │ • name          │                                                          │
+│  │ • addtime       │                                                          │
+│  │ • state         │                                                          │
 │  └─────────────────┘                                                          │
 │         │                                                                     │
 │         │ 1:N                                                                 │
 │         ▼                                                                     │
 │  ┌─────────────────┐                                                          │
 │  │     user表      │                                                          │
-│  │                │                                                           │
-│  │ • stuid (PK)   │                                                           │
-│  │ • studentid    │                                                           │
-│  │ • password     │                                                           │
-│  │ • schoolid (FK)│                                                           │
-│  │ • sex          │                                                           │
-│  │ • name         │                                                           │
-│  │ • registertime │                                                           │
-│  │ • money        │                                                           │
-│  │ • state        │                                                           │
+│  │                 │                                                          │
+│  │ • stuid (PK)    │                                                          │
+│  │ • studentid     │                                                          │
+│  │ • password      │                                                          │
+│  │ • schoolid (FK) │                                                          │
+│  │ • sex           │                                                          │
+│  │ • name          │                                                          │
+│  │ • registertime  │                                                          │
+│  │ • money         │                                                          │
+│  │ • state         │                                                          │
 │  └─────────────────┘                                                          │
 │         │                                                                     │
 │         │ 1:N                                                                 │
 │         ▼                                                                     │
-│  ┌─────────────────┐                                                          │
-│  │     task表      │                                                          │
-│  │                │                                                           │
-│  │ • tid (PK)     │                                                           │
-│  │ • taskname     │                                                           │
-│  │ • title        │                                                           │
-│  │ • content      │                                                           │
-│  │ • price        │                                                           │
+│  ┌────────────────────────┐                                                   │
+│  │     task表             │                                                   │
+│  │                        │                                                   │
+│  │ • tid (PK)             │                                                   │
+│  │ • taskname             │                                                   │
+│  │ • title                │                                                   │
+│  │ • content              │                                                   │
+│  │ • price                │                                                   │
 │  │ • publish_user_id (FK) │                                                   │
 │  │ • accept_user_id (FK)  │                                                   │
 │  │ • schoolid (FK)        │                                                   │
 │  │ • state                │                                                   │
 │  │ • addtime              │                                                   │
 │  │ • finishtime           │                                                   │
-│  └─────────────────────────┘                                                  │
+│  └────────────────────────┘                                                   │
 │                                                                               │
 │  ┌─────────────────┐    ┌─────────────────┐                                   │
 │  │    admin表      │    │   product表     │                                   │
-│  │                │     │                │                                    │
-│  │ • aid (PK)     │     │ • id (PK)      │                                    │
-│  │ • account      │     │ • name         │                                    │
-│  │ • password     │     │ • icon         │                                    │
-│  │ • name         │     │ • price        │                                    │
-│  │ • addtime      │     │                │                                    │
-│  │ • state        │     │                │                                    │
+│  │                 │    │                 │                                   │
+│  │ • aid (PK)      │    │ • id (PK)       │                                   │
+│  │ • account       │    │ • name          │                                   │
+│  │ • password      │    │ • icon          │                                   │
+│  │ • name          │    │ • price         │                                   │
+│  │ • addtime       │    │                 │                                   │
+│  │ • state         │    │                 │                                   │
 │  └─────────────────┘    └─────────────────┘                                   │
 │                                                                               │
-│  关系说明：                                                                    │
+│  关系说明：                                                                   │
 │  • school (1) ←→ (N) user: 一个学校可以有多个用户                              │
 │  • user (1) ←→ (N) task: 一个用户可以发布多个任务                              │
 │  • user (1) ←→ (N) task: 一个用户可以接受多个任务                              │
@@ -325,44 +325,44 @@
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              表结构详情                                         │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│                                                                                │
+│                                                                                 │
 │  school表 (学校表)                                                              │
 │  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
 │  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
 │  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
-│  │ schoolid    │ int(6)      │ PK, AI     │ 学校ID，主键，自增                  │
+│  │ schoolid    │ int(6)      │ PK, AI     │ 学校ID，主键，自增                   │
 │  │ name        │ varchar(255)│ NOT NULL   │ 学校名称                             │
 │  │ addtime     │ datetime    │ NOT NULL   │ 添加时间                             │
 │  │ state       │ int(2)      │ DEFAULT 0  │ 状态，0-正常，1-禁用                 │
 │  └─────────────┴─────────────┴─────────────┴─────────────────────────────────────┘
-│                                                                                │
+│                                                                                 │
 │  user表 (用户表)                                                                │
 │  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
 │  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
 │  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
-│  │ stuid       │ int(11)     │ PK, AI     │ 用户ID，主键，自增                  │
+│  │ stuid       │ int(11)     │ PK, AI     │ 用户ID，主键，自增                   │
 │  │ studentid   │ varchar(20) │ NOT NULL   │ 学号，唯一标识                       │
 │  │ password    │ varchar(255)│ NOT NULL   │ 密码，加密存储                       │
-│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键→school.schoolid        │
+│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键→school.schoolid         │
 │  │ sex         │ int(2)      │ DEFAULT 0  │ 性别，0-未知，1-男，2-女             │
 │  │ name        │ varchar(255)│ NOT NULL   │ 姓名                                 │
 │  │ registertime│ datetime(6) │ NOT NULL   │ 注册时间                             │
 │  │ money       │ double(20,0)│ DEFAULT 0  │ 账户余额                             │
 │  │ state       │ int(2)      │ DEFAULT 0  │ 状态，0-正常，1-禁用                 │
 │  └─────────────┴─────────────┴─────────────┴─────────────────────────────────────┘
-│                                                                                │
+│                                                                                 │
 │  task表 (任务表)                                                                │
 │  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
 │  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
 │  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
-│  │ tid         │ int(8)      │ PK, AI     │ 任务ID，主键，自增                  │
+│  │ tid         │ int(8)      │ PK, AI     │ 任务ID，主键，自增                   │
 │  │ taskname    │ varchar(255)│ NOT NULL   │ 任务名称                             │
 │  │ title       │ varchar(255)│ NOT NULL   │ 任务标题                             │
 │  │ content     │ text        │ NOT NULL   │ 任务内容描述                         │
 │  │ price       │ double(30,0)│ NOT NULL   │ 任务奖励金额                         │
 │  │ publish_user_id│ varchar(255)│ NOT NULL│ 发布用户学号，外键→user.studentid    │
 │  │ accept_user_id│ int(11)   │ DEFAULT 0  │ 接受用户ID，外键→user.stuid          │
-│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键→school.schoolid        │
+│  │ schoolid    │ int(6)      │ NOT NULL   │ 学校ID，外键→school.schoolid         │
 │  │ state       │ int(2)      │ DEFAULT 0  │ 任务状态，0-待接受，1-进行中，2-已完成，3-已关闭│
 │  │ addtime     │ datetime(6) │ NOT NULL   │ 发布时间                             │
 │  │ finishtime  │ datetime    │ NULL       │ 完成时间                             │
@@ -372,19 +372,19 @@
 │  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
 │  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
 │  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
-│  │ aid         │ int(11)     │ PK, AI     │ 管理员ID，主键，自增                │
+│  │ aid         │ int(11)     │ PK, AI     │ 管理员ID，主键，自增                 │
 │  │ account     │ varchar(255)│ NOT NULL   │ 管理员账号                           │
 │  │ password    │ varchar(255)│ NOT NULL   │ 密码，加密存储                       │
 │  │ name        │ varchar(255)│ NOT NULL   │ 管理员姓名                           │
 │  │ addtime     │ datetime    │ NOT NULL   │ 添加时间                             │
 │  │ state       │ int(2)      │ DEFAULT 0  │ 状态，0-正常，1-禁用                 │
 │  └─────────────┴─────────────┴─────────────┴─────────────────────────────────────┘
-│                                                                                │
-│  product表 (产品表)                                                             │
+│                                                                                 │
+│  product表 (产品表)                                                              │
 │  ┌─────────────┬─────────────┬─────────────┬─────────────────────────────────────┐
 │  │ 字段名      │ 数据类型    │ 约束        │ 说明                                │
 │  ├─────────────┼─────────────┼─────────────┼─────────────────────────────────────┤
-│  │ id          │ int(11)     │ PK, AI     │ 产品ID，主键，自增                  │
+│  │ id          │ int(11)     │ PK, AI     │ 产品ID，主键，自增                   │
 │  │ name        │ varchar(255)│ NOT NULL   │ 产品名称                             │
 │  │ icon        │ varchar(255)│ NULL       │ 产品图标                             │
 │  │ price       │ varchar(255)│ NULL       │ 产品价格                             │
