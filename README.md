@@ -35,26 +35,26 @@
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              控制器层 (Controller Layer)                        │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
-│  │ UserController  │    │ TaskController  │    │ AdminController │             │
-│  │                │     │                 │    │                │             │
-│  │ • login()      │     │ • findtask()    │    │ • login()      │             │
-│  │ • register()   │     │ • newtask()     │    │ • update()     │             │
-│  │ • update()     │     │ • mytask()      │    │ • addAdmin()   │             │
-│  │ • updatePassword()│  │ • atask()       │    │ • getUserList()│             │
-│  │ • getUserInfo()│     │ • finishtask()  │    │ • getTaskList()│             │
-│  │ • addMoney()   │     │ • closetask()   │    │ • getSchoolList()│           │
-│  └─────────────────┘    │ • taskinfo()    │    │ • addUserMoney()│            │
-│                         │ • searchtask()  │    │ • updateUserState()│         │
-│  ┌─────────────────┐    └─────────────────┘    └─────────────────┘            │
-│  │ProductController│                                                          │
-│  │                │    ┌─────────────────┐                                    │
-│  │ • getProductList()│ │CommonController │                                    │
-│  │ • addProduct() │    │                 │                                    │
-│  │ • updateProduct()│  │ • index()       │                                    │
-│  │ • deleteProduct()│  │ • login()       │                                    │
-│  └─────────────────┘   │ • register()    │                                    │
-│                        └─────────────────┘                                    │
+│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐              │
+│  │ UserController  │    │ TaskController  │    │ AdminController │              │
+│  │                │     │                 │    │                │               │
+│  │ • login()      │     │ • findtask()    │    │ • login()      │               │
+│  │ • register()   │     │ • newtask()     │    │ • update()     │               │
+│  │ • update()     │     │ • mytask()      │    │ • addAdmin()   │               │
+│  │ • updatePassword()│  │ • atask()       │    │ • getUserList()│               │
+│  │ • getUserInfo()│     │ • finishtask()  │    │ • getTaskList()│               │
+│  │ • addMoney()   │     │ • closetask()   │    │ • getSchoolList()│             │
+│  └─────────────────┘    │ • taskinfo()    │    │ • addUserMoney()│              │
+│                         │ • searchtask()  │    │ • updateUserState()│           │
+│  ┌─────────────────┐    └─────────────────┘    └─────────────────┘              │
+│  │ProductController│                                                            │
+│  │                │    ┌─────────────────┐                                      │
+│  │ • getProductList()│ │CommonController │                                      │
+│  │ • addProduct() │    │                 │                                      │
+│  │ • updateProduct()│  │ • index()       │                                      │
+│  │ • deleteProduct()│  │ • login()       │                                      │
+│  └─────────────────┘   │ • register()    │                                      │
+│                        └─────────────────┘                                      │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
