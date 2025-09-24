@@ -17,17 +17,17 @@
 │                                表示层 (Presentation Layer)                       │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
-│  │   用户端页面     │    │   管理员端页面   │    │   静态资源      │             │
-│  │                │    │                │    │                │             │
+│  │   用户端页面    │    │   管理员端页面   │   │   静态资源      │             │
+│  │                │    │                 │    │                │             │
 │  │ • index.jsp    │    │ • adminIndex.jsp│    │ • LayUI框架    │             │
 │  │ • login.jsp    │    │ • adminUser.jsp │    │ • CSS样式      │             │
 │  │ • register.jsp │    │ • adminTask.jsp │    │ • JavaScript   │             │
-│  │ • userIndex.jsp│    │ • adminSchool.jsp│    │ • 图片资源     │             │
-│  │ • userInfo.jsp │    │ • adminProduct.jsp│   │ • 字体文件     │             │
-│  │ • userNewtask.jsp│   │                │    │                │             │
-│  │ • userPtask.jsp│    │                │    │                │             │
-│  │ • userAtask.jsp│    │                │    │                │             │
-│  │ • taskInfo.jsp │    │                │    │                │             │
+│  │ • userIndex.jsp│    │ • adminSchool.jsp│   │ • 图片资源     │             │
+│  │ • userInfo.jsp │    │ • adminProduct.jsp│  │ • 字体文件     │             │
+│  │ • userNewtask.jsp│  │                │     │                │             │
+│  │ • userPtask.jsp│    │                │     │                │             │
+│  │ • userAtask.jsp│    │                │     │                │             │
+│  │ • taskInfo.jsp │    │                │      │                │             │
 │  └─────────────────┘    └─────────────────┘    └─────────────────┘             │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
@@ -37,52 +37,52 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
 │  │ UserController  │    │ TaskController  │    │ AdminController │             │
-│  │                │    │                │    │                │             │
-│  │ • login()      │    │ • findtask()   │    │ • login()      │             │
-│  │ • register()   │    │ • newtask()    │    │ • update()     │             │
-│  │ • update()     │    │ • mytask()     │    │ • addAdmin()   │             │
-│  │ • updatePassword()│  │ • atask()      │    │ • getUserList()│             │
-│  │ • getUserInfo()│    │ • finishtask() │    │ • getTaskList()│             │
-│  │ • addMoney()   │    │ • closetask()  │    │ • getSchoolList()│            │
-│  └─────────────────┘    │ • taskinfo()   │    │ • addUserMoney()│            │
-│                         │ • searchtask() │    │ • updateUserState()│         │
+│  │                │     │                 │    │                │             │
+│  │ • login()      │     │ • findtask()    │    │ • login()      │             │
+│  │ • register()   │     │ • newtask()     │    │ • update()     │             │
+│  │ • update()     │     │ • mytask()      │    │ • addAdmin()   │             │
+│  │ • updatePassword()│  │ • atask()       │    │ • getUserList()│             │
+│  │ • getUserInfo()│     │ • finishtask()  │    │ • getTaskList()│             │
+│  │ • addMoney()   │     │ • closetask()   │    │ • getSchoolList()│            │
+│  └─────────────────┘    │ • taskinfo()    │    │ • addUserMoney()│            │
+│                         │ • searchtask()  │    │ • updateUserState()│         │
 │  ┌─────────────────┐    └─────────────────┘    └─────────────────┘             │
 │  │ProductController│                                                          │
 │  │                │    ┌─────────────────┐                                    │
-│  │ • getProductList()│  │CommonController │                                    │
+│  │ • getProductList()│ │CommonController │                                    │
 │  │ • addProduct() │    │                │                                    │
 │  │ • updateProduct()│  │ • index()      │                                    │
 │  │ • deleteProduct()│  │ • login()      │                                    │
-│  └─────────────────┘    │ • register()   │                                    │
-│                         └─────────────────┘                                    │
+│  └─────────────────┘   │ • register()   │                                    │
+│                        └─────────────────┘                                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              业务层 (Service Layer)                             │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
-│  │ UserService     │    │ TaskService     │    │ AdminService    │             │
-│  │                │    │                │    │                │             │
-│  │ • login()      │    │ • getTaskByKeysNoState()│ • login()      │             │
-│  │ • register()   │    │ • getTaskByKeys()│    │ • updateAdmin() │             │
-│  │ • updateUser() │    │ • getTaskByPublishUserId()│ • addAdmin() │             │
-│  │ • getUserById()│    │ • getTaskByAcceptUserId()│ • getAdminById()│           │
-│  │ • addUserMoney()│   │ • addTask()     │    │                │             │
-│  │ • updateUserState()│ │ • updateTask() │    │                │             │
-│  └─────────────────┘    │ • deleteTask() │    │                │             │
-│                         │ • acceptTask() │    │                │             │
-│  ┌─────────────────┐    │ • finishTask() │    └─────────────────┘             │
-│  │ProductService   │    └─────────────────┘                                    │
-│  │                │                                                          │
-│  │ • getProductList()│   ┌─────────────────┐                                  │
-│  │ • addProduct() │    │ SchoolService    │                                  │
-│  │ • updateProduct()│  │                │                                  │
-│  │ • deleteProduct()│  │ • getSchoolList()│                                  │
-│  └─────────────────┘    │ • getSchoolById()│                                  │
-│                         │ • addSchool()   │                                  │
-│                         │ • updateSchool()│                                  │
-│                         └─────────────────┘                                  │
+│  ┌─────────────────┐    ┌─────────────────┐         ┌─────────────────┐         │
+│  │ UserService     │    │ TaskService     │         │ AdminService    │         │
+│  │                │     │                │          │                │          │
+│  │ • login()      │     │ • getTaskByKeysNoState()  │ • login()      │          │
+│  │ • register()   │     │ • getTaskByKeys()│        │ • updateAdmin() │         │
+│  │ • updateUser() │     │ • getTaskByPublishUserId()│ • addAdmin() │            │
+│  │ • getUserById()│     │ • getTaskByAcceptUserId() │ • getAdminById()│         │
+│  │ • addUserMoney()│    │ • addTask()     │         │                │          │
+│  │ • updateUserState()│ │ • updateTask() │          │                │          │
+│  └─────────────────┘    │ • deleteTask() │          │                │          │
+│                         │ • acceptTask() │          │                │          │
+│  ┌─────────────────┐    │ • finishTask() │          └─────────────────┘         │
+│  │ProductService   │    └─────────────────┘                                     │
+│  │                │                                                             │
+│  │ • getProductList()│   ┌─────────────────┐                                    │
+│  │ • addProduct() │    │ SchoolService    │                                     │
+│  │ • updateProduct()│  │                │                                       │
+│  │ • deleteProduct()│  │ • getSchoolList()│                                     │
+│  └─────────────────┘    │ • getSchoolById()│                                    │
+│                         │ • addSchool()   │                                     │
+│                         │ • updateSchool()│                                     │
+│                         └─────────────────┘                                     │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
@@ -91,7 +91,7 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
 │  │ UserMapper      │    │ TaskMapper      │    │ AdminMapper     │             │
-│  │                │    │                │    │                │             │
+│  │                 │    │                 │    │                │             │
 │  │ • 用户CRUD操作  │    │ • 任务CRUD操作  │    │ • 管理员CRUD操作│             │
 │  │ • 登录验证      │    │ • 任务列表查询  │    │ • 登录验证      │             │
 │  │ • 信息查询      │    │ • 状态查询      │    │ • 权限管理      │             │
@@ -100,7 +100,7 @@
 │                                                                                │
 │  ┌─────────────────┐    ┌─────────────────┐                                    │
 │  │ProductMapper    │    │ SchoolMapper    │                                    │
-│  │                │    │                │                                    │
+│  │                 │    │                 │                                    │
 │  │ • 产品CRUD操作  │    │ • 学校CRUD操作  │                                    │
 │  │ • 产品列表查询  │    │ • 学校列表查询  │                                    │
 │  │ • 信息管理      │    │ • 信息查询      │                                    │
@@ -113,26 +113,26 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
 │  │      User       │    │      Task       │    │      Admin      │             │
-│  │                │    │                │    │                │             │
-│  │ • stuid        │    │ • taskid       │    │ • aid           │             │
-│  │ • studentid    │    │ • publishUserId│    │ • account       │             │
-│  │ • password     │    │ • publishUserName│   │ • password      │             │
-│  │ • schoolid     │    │ • publishSchoolId│   │ • name          │             │
-│  │ • sex          │    │ • acceptUserId  │    │ • addtime       │             │
-│  │ • name         │    │ • reward        │    │ • state         │             │
-│  │ • registertime │    │ • addtime       │    │                │             │
-│  │ • money        │    │ • endtime       │    │                │             │
-│  │ • state        │    │ • taskname      │    │                │             │
+│  │                │     │                 │    │                 │             │
+│  │ • stuid        │     │ • taskid        │    │ • aid           │             │
+│  │ • studentid    │     │ • publishUserId │    │ • account       │             │
+│  │ • password     │     │ • publishUserName│   │ • password      │             │
+│  │ • schoolid     │     │ • publishSchoolId│   │ • name          │             │
+│  │ • sex          │     │ • acceptUserId  │    │ • addtime       │             │
+│  │ • name         │     │ • reward        │    │ • state         │             │
+│  │ • registertime │     │ • addtime       │    │                 │             │
+│  │ • money        │     │ • endtime       │    │                 │             │
+│  │ • state        │     │ • taskname      │    │                 │             │
 │  └─────────────────┘    │ • taskcontext   │    └─────────────────┘             │
 │                         │ • state         │                                    │
 │  ┌─────────────────┐    └─────────────────┘    ┌─────────────────┐             │
-│  │    Product      │                          │     School      │             │
-│  │                │                          │                │             │
-│  │ • id           │                          │ • schoolid     │             │
-│  │ • name         │                          │ • name         │             │
-│  │ • icon         │                          │ • addtime      │             │
-│  │ • price        │                          │ • state        │             │
-│  └─────────────────┘                          └─────────────────┘             │
+│  │    Product      │                           │     School      │             │
+│  │                │                            │                 │             │
+│  │ • id           │                            │ • schoolid      │             │
+│  │ • name         │                            │ • name          │             │
+│  │ • icon         │                            │ • addtime       │             │
+│  │ • price        │                            │ • state         │             │
+│  └─────────────────┘                           └─────────────────┘             │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
                                         ▼
@@ -141,13 +141,13 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐                ┌─────────────────┐                         │
 │  │      Const      │                │     JsonUtil    │                         │
-│  │                │                │                │                         │
+│  │                 │                │                 │                         │
 │  │ • ROOT          │                │ • object2json() │                         │
 │  │ • ROOT_ADMIN    │                │ • bean2json()   │                         │
 │  │ • PAGESIZE      │                │ • list2json()   │                         │
 │  │ • getFullTime() │                │ • map2json()    │                         │
 │  │ • getTime()     │                │ • string2json() │                         │
-│  │ • getIds()      │                │                │                         │
+│  │ • getIds()      │                │                 │                         │
 │  └─────────────────┘                └─────────────────┘                         │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
@@ -157,17 +157,17 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐             │
 │  │    user表       │    │    task表       │    │    admin表      │             │
-│  │                │    │                │    │                │             │
-│  │ • 用户信息存储  │    │ • 任务信息存储  │    │ • 管理员信息存储│             │
-│  │ • 登录验证      │    │ • 任务状态管理  │    │ • 权限控制      │             │
-│  │ • 余额管理      │    │ • 发布接受关系  │    │ • 系统配置      │             │
+│  │                 │    │                 │    │                 │             │
+│  │ • 用户信息存储  │    │ • 任务信息存储  │     │ • 管理员信息存储│             │
+│  │ • 登录验证      │    │ • 任务状态管理  │     │ • 权限控制      │             │
+│  │ • 余额管理      │    │ • 发布接受关系  │     │ • 系统配置      │             │
 │  └─────────────────┘    └─────────────────┘    └─────────────────┘             │
 │                                                                                │
 │  ┌─────────────────┐    ┌─────────────────┐                                    │
 │  │   product表     │    │   school表      │                                    │
-│  │                │    │                │                                    │
-│  │ • 产品信息存储  │    │ • 学校信息存储  │                                    │
-│  │ • 商品管理      │    │ • 学校分类      │                                    │
+│  │                 │    │                 │                                    │
+│  │ • 产品信息存储  │    │ • 学校信息存储   │                                    │
+│  │ • 商品管理      │    │ • 学校分类       │                                    │
 │  └─────────────────┘    └─────────────────┘                                    │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
@@ -179,14 +179,14 @@
 ┌─────────────────────────────────────────────────────────────────────────────────┐
 │                              技术栈说明                                         │
 ├─────────────────────────────────────────────────────────────────────────────────┤
-│  • Spring MVC 4.1.4    - MVC框架，处理Web请求和响应                            │
-│  • MyBatis 3.2.6       - ORM框架，数据持久化                                  │
-│  • MySQL 8.0           - 关系型数据库                                          │
-│  • Apache Tomcat 9.0   - Web服务器容器                                        │
-│  • LayUI               - 前端UI框架                                           │
-│  • PageHelper 4.1.6    - 分页插件                                            │
-│  • FastJSON 1.2.6      - JSON处理库                                          │
-│  • Apache Commons DBCP - 数据库连接池                                        │
+│  • Spring MVC 4.1.4    - MVC框架，处理Web请求和响应                             │
+│  • MyBatis 3.2.6       - ORM框架，数据持久化                                    │
+│  • MySQL 8.0           - 关系型数据库                                           │
+│  • Apache Tomcat 9.0   - Web服务器容器                                          │
+│  • LayUI               - 前端UI框架                                             │
+│  • PageHelper 4.1.6    - 分页插件                                               │
+│  • FastJSON 1.2.6      - JSON处理库                                             │
+│  • Apache Commons DBCP - 数据库连接池                                           │
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -194,7 +194,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────┐
-│                            Campus Help System 数据流图                           │
+│                            Campus Help System 数据流图                          │
 └─────────────────────────────────────────────────────────────────────────────────┘
 
 用户请求流程：
@@ -206,12 +206,12 @@
        │                   │                   │                   │
        ▼                   ▼                   ▼                   ▼
 ┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   用户操作   │    │  请求处理    │    │  业务逻辑    │    │  数据操作    │
+│   用户操作   │    │  请求处理   │    │  业务逻辑    │   │  数据操作    │
 │ • 登录      │    │ • 参数验证   │    │ • 数据处理  │    │ • SQL执行   │
 │ • 注册      │    │ • 权限检查   │    │ • 事务管理  │    │ • 结果返回   │
-│ • 发布任务   │    │ • 路由分发   │    │ • 业务规则  │    │ • 异常处理   │
-│ • 接受任务   │    │ • 响应处理   │    │ • 状态管理  │    │ • 连接管理   │
-│ • 管理任务   │    │ • 视图渲染   │    │ • 数据转换  │    │ • 缓存处理   │
+│ • 发布任务   │   │ • 路由分发   │    │ • 业务规则  │    │ • 异常处理   │
+│ • 接受任务   │   │ • 响应处理   │    │ • 状态管理  │    │ • 连接管理   │
+│ • 管理任务   │   │ • 视图渲染   │    │ • 数据转换  │    │ • 缓存处理   │
 └─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
        │                   │                   │                   │
        │                   │                   │                   │
