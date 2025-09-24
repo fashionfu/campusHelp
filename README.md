@@ -43,10 +43,10 @@
 │  │ • update()     │     │ • mytask()      │    │ • addAdmin()   │             │
 │  │ • updatePassword()│  │ • atask()       │    │ • getUserList()│             │
 │  │ • getUserInfo()│     │ • finishtask()  │    │ • getTaskList()│             │
-│  │ • addMoney()   │     │ • closetask()   │    │ • getSchoolList()│            │
+│  │ • addMoney()   │     │ • closetask()   │    │ • getSchoolList()│           │
 │  └─────────────────┘    │ • taskinfo()    │    │ • addUserMoney()│            │
 │                         │ • searchtask()  │    │ • updateUserState()│         │
-│  ┌─────────────────┐    └─────────────────┘    └─────────────────┘             │
+│  ┌─────────────────┐    └─────────────────┘    └─────────────────┘            │
 │  │ProductController│                                                          │
 │  │                │    ┌─────────────────┐                                    │
 │  │ • getProductList()│ │CommonController │                                    │
