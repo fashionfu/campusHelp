@@ -74,9 +74,9 @@
 │                         │ • acceptTask() │          │                │          │
 │  ┌─────────────────┐    │ • finishTask() │          └─────────────────┘         │
 │  │ProductService   │    └─────────────────┘                                     │
-│  │                │                                                             │
+│  │                 │                                                            │
 │  │ • getProductList()│   ┌─────────────────┐                                    │
-│  │ • addProduct() │      │ SchoolService   │                                    │
+│  │ • addProduct()  │     │ SchoolService   │                                    │
 │  │ • updateProduct()│    │                 │                                    │
 │  │ • deleteProduct()│    │ • getSchoolList()│                                   │
 │  └─────────────────┘     │ • getSchoolById()│                                   │
