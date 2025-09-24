@@ -4,6 +4,8 @@
 
 这是一个基于Spring MVC + MyBatis + MySQL的校园互助系统，为学生提供任务发布、接受和管理功能。
 
+![Campus Help System](https://github.com/fashionfu/campusHelp/raw/master/product.png)
+
 ## 技术栈
 
 - **后端框架**: Spring MVC 4.1.4
