@@ -18,16 +18,16 @@
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │  ┌─────────────────┐   ┌─────────────────┐    ┌─────────────────┐               │
 │  │   用户端页面    │   │   管理员端页面   │    │   静态资源      │               │
-│  │                │    │                 │    │                 │               │
-│  │ • index.jsp    │    │ • adminIndex.jsp│    │ • LayUI框架     │               │
-│  │ • login.jsp    │    │ • adminUser.jsp │    │ • CSS样式       │               │
-│  │ • register.jsp │    │ • adminTask.jsp │    │ • JavaScript    │               │
-│  │ • userIndex.jsp│    │ • adminSchool.jsp│   │ • 图片资源      │               │
-│  │ • userInfo.jsp │    │ • adminProduct.jsp│  │ • 字体文件      │               │
+│  │                 │   │                 │    │                 │               │
+│  │ • index.jsp     │   │ • adminIndex.jsp│    │ • LayUI框架     │               │
+│  │ • login.jsp     │   │ • adminUser.jsp │    │ • CSS样式       │               │
+│  │ • register.jsp  │   │ • adminTask.jsp │    │ • JavaScript    │               │
+│  │ • userIndex.jsp │   │ • adminSchool.jsp│   │ • 图片资源      │               │
+│  │ • userInfo.jsp  │   │ • adminProduct.jsp│  │ • 字体文件      │               │
 │  │ • userNewtask.jsp│  │                 │    │                 │               │
-│  │ • userPtask.jsp│    │                 │    │                 │               │
-│  │ • userAtask.jsp│    │                 │    │                 │               │
-│  │ • taskInfo.jsp │    │                 │    │                 │               │
+│  │ • userPtask.jsp │   │                 │    │                 │               │
+│  │ • userAtask.jsp │   │                 │    │                 │               │
+│  │ • taskInfo.jsp  │   │                 │    │                 │               │
 │  └─────────────────┘   └─────────────────┘    └─────────────────┘               │
 └─────────────────────────────────────────────────────────────────────────────────┘
                                         │
